@@ -30,6 +30,4 @@ Route::group(['middleware' => ['web']], function () {
     //
 });
 */
-Route::get('/' , function(){
-	return "Primeira Lógica com Laravel";
-});
+Route::get('/produtos' , 'ProdutoController@lista');
