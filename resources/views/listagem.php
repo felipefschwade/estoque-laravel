@@ -5,7 +5,7 @@
 </head>
 <body>
 	<h1>Controle de Estoque</h1>
-	<table>
+	<table class="table">
 		<?php foreach ($produtos as $p) { ?>
 			<tr>
             	<td><?=$p->nome?></td>
