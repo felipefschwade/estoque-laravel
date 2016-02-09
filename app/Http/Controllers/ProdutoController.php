@@ -6,7 +6,8 @@
 			return view('listagem')->with('produtos', $produtos);
 		}
 		public function mostra(){
-			$protudo = DB::select('select * from produtos where id = ?' [1]);
-			return view('detalhes')->with('produto', $produto);
+			$id = 1;
+			$produto = DB::select('select * from produtos where id = ?', [$id]);
+			return view('detalhes')->with('produto', $produto[0]);
 		}
 	}
