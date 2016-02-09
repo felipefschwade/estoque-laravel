@@ -1,6 +1,6 @@
 <html>
 <head>
-	<link rel="stylesheet" type="text/css" href="/css/app.css">
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 	<title>Estoque de Produtos</title>
 </head>
 <body>
@@ -12,6 +12,10 @@
             	<td><?=$p->descricao?></td>
             	<td><?=$p->valor?></td>
             	<td><?=$p->quantidade?></td>
+        		<td><a href="/produtos/mostra">
+					  <span class="glyphicon glyphicon-search"></span>
+					</a>
+				</td>	
             </tr>
 	       <?php } ?>
 	</table>
