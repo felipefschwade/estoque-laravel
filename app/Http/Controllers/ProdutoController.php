@@ -7,8 +7,12 @@
 			return view('listagem')->with('produtos', $produtos);
 		}
 		public function mostra(){
-			$id = Request::input('id');
+			$id = Request::input('id' , 1);
 			$produto = DB::select('select * from produtos where id = ?', [$id]);
-			return view('detalhes')->with('produto', $produto[0]);
+			if (empty($produto)) {
+				echo "Este Produto não Existe!";
+			} else {
+				return view('detalhes')->with('produto', $produto[0]);
+			}
 		}
 	}
