@@ -18,3 +18,12 @@
 	//Para ativar o Debug -> Modificar o arquivo env.example para env deixando os parametros corretos
 
 	//Views localizadas em /resources/views
+
+	//Para obter um parametro via URL
+	use Request;
+	Request::input('nome' , 'deault' //Default usado para quand o parametro não é passado);
+
+	//Utilizando paramêtros na rota
+	Route::get('/nome/{var}' , 'NomeControlador@nomeMetodo');
+	//No controlador
+	Request::route('nomeDoParametro');
