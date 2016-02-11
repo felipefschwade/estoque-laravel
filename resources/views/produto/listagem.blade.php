@@ -1,4 +1,4 @@
-@extends('principal')
+@extends('layout/principal')
 @section('conteudo')
 	<h1>Controle de Estoque</h1>
 	@if(empty($produtos))
