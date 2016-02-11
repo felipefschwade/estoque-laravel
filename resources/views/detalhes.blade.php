@@ -1,4 +1,4 @@
-@extends('principal');
+@extends('principal')
 
 @section('conteudo')
 	<h1>Detalhes do Produto <?= $produto->nome ?></h1>
