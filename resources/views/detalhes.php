@@ -1,6 +1,6 @@
 <html>
 	<head>
-		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
 		<title>Detalhes de um Produto</title>
 	</head>
 	<body>

@@ -27,3 +27,16 @@
 	Route::get('/nome/{var}' , 'NomeControlador@nomeMetodo');
 	//No controlador
 	Request::route('nomeDoParametro');
+
+	//Criando Templates
+	1 - Salvar o Arquivo da forma: nome.blade.php
+	2 - Incluir o HTML e no conteúdo utilizar @yield('nome2');
+	3 - Utilizar @extends('nome'); no topo da página;
+	4 - Utilizar @section ('nome2') no começo e @stop no fim de onde será o yield;
+	5 - Modificar o nome das views para nome.blade.php
+
+	//Exibição de variáveis utilizando o blade
+	{{var or 'Texto' /*Caso var não tenha valor*/}} substitui a marcação do php
+	@foreach
+	@endforeach
+	<p>class="{{ a >= 0 ? 'danger' : ''}}"</p>
