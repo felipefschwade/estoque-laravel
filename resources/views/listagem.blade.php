@@ -8,7 +8,7 @@
 	@else
 		<table class="table">
 			@foreach($produtos as $p)
-				<tr>
+				<tr class="{{ $p->quantidade <= 1 ? 'danger' : ''}}">
 	            	<td><?=$p->nome?></td>
 	            	<td><?=$p->descricao?></td>
 	            	<td><?=$p->valor?></td>
