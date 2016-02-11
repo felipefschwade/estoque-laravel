@@ -1,12 +1,8 @@
-<html>
-<head>
-	<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
-	<title>Estoque de Produtos</title>
-</head>
-<body>
+@extends('principal')
+@section('conteudo')
 	<h1>Controle de Estoque</h1>
 	<table class="table">
-		<?php foreach ($produtos as $p) { ?>
+		@foreach($produtos as $p)
 			<tr>
             	<td><?=$p->nome?></td>
             	<td><?=$p->descricao?></td>
@@ -17,7 +13,5 @@
 					</a>
 				</td>	
             </tr>
-	       <?php } ?>
-	</table>
-</body>
-</html>
+	    @endforeach
+@stop
