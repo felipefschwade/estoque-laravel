@@ -22,6 +22,10 @@
 	//Para obter um parametro via URL
 	use Request;
 	Request::input('nome' , 'deault' //Default usado para quand o parametro não é passado);
+	//Para metodos post é necessário incluir a linha que impede ataques de csrf:
+	<input type="hidden" name="_token" value="{{csrf_token()}}">
+	//Modificar o metodo da rota
+	Route::post('nome/metodo' , 'NomeControlador@nomeMetodo')
 
 	//Utilizando paramêtros na rota
 	Route::get('/nome/{var}' , 'NomeControlador@nomeMetodo');
@@ -40,3 +44,8 @@
 	@foreach
 	@endforeach
 	<p>class="{{ a >= 0 ? 'danger' : ''}}"</p>
+
+	//Para utilizar o DB
+	use Illuminate\Support\Facades\DB;
+	DB::select('select * from produtos where id = ?', [arraycontendo os valores que irão no lugar do ?]);
+	DB::insert('insert into tabela (colum, colum, colum) values (?,?,?)', array(arraycontendo os valores que irão no lugar do ?);
