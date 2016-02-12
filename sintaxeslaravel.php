@@ -21,7 +21,7 @@
 
 	//Para obter um parametro via URL
 	use Request;
-	Request::input('nome' , 'deault' //Default usado para quand o parametro não é passado);
+	Request::input('nome' , 'default'); //Default usado para quand o parametro não é passado);
 	//Para metodos post é necessário incluir a linha que impede ataques de csrf:
 	<input type="hidden" name="_token" value="{{csrf_token()}}">
 	//Modificar o metodo da rota
