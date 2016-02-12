@@ -1,7 +1,8 @@
 @extends('layout/principal')
+
 @section('conteudo')
 	<div class="container">
-		<form>
+		<form action="/produtos/adiciona">
 			<div class="form-group">
 				<label for="nome">Nome</label>
 				<input class="form-control" id="nome" name="nome">
