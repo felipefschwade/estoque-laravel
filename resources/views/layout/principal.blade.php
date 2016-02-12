@@ -4,12 +4,16 @@
 		<title>Estoque de Produtos</title>
 	</head>
 	<body>
-		<div class="container-fluid">
+		<header>
 			<ul class="nav navbar-nav navbar-right">
 			  <li><a href="/produtos">Listagem</a></li>
 			  <li><a href="/produtos/novo">Novo</a></li>
 			</ul>
-			@yield('conteudo')
-		</div>
+		</header>
+		<main>
+			<div class="container-fluid">
+				@yield('conteudo')
+			</div>
+		</main>	
 	</body>
 </html>
