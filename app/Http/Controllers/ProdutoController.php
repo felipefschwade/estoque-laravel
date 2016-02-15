@@ -24,6 +24,6 @@
 			$quantidade = Request::input('quantidade');
 			$descricao = Request::input('descricao');
 			DB::insert('insert into produtos (nome, valor, quantidade, descricao) values (?,?,?,?)', array($nome, $valor, $quantidade, $descricao) );
-			return redirect('/produtos');
+			return redirect('/produtos')->withInput();
 		}
 	}
