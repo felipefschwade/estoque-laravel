@@ -54,8 +54,9 @@
 	return redirect('rota/rota');
 
 	//Para enviar parametros de requisições anteriores
-	1 - Enviar o parametro: return redirect('rota/rota')->withInput();
+	1 - Enviar o parametro: return redirect('rota/rota')->withInput(Request::except('nome') ou Request::only('nome') ou nada para todos parametros);
 	2 - Resgatar na página desejada através de: old('nomevar');
+
 
 	//Para gerar uma key de session automatica
 	php artisan key:generate
