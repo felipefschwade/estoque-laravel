@@ -52,6 +52,8 @@
 
 	//Para encaminhar rotas 
 	return redirect('rota/rota');
+	//Ou
+	redirect()->action('NomeControlador@metodo')->withInput(Request::only('nome'));
 
 	//Para enviar parametros de requisições anteriores
 	1 - Enviar o parametro: return redirect('rota/rota')->withInput(Request::except('nome') ou Request::only('nome') ou nada para todos parametros);
