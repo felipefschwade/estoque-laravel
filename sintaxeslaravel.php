@@ -49,3 +49,10 @@
 	use Illuminate\Support\Facades\DB;
 	DB::select('select * from produtos where id = ?', [arraycontendo os valores que irão no lugar do ?]);
 	DB::insert('insert into tabela (colum, colum, colum) values (?,?,?)', array(arraycontendo os valores que irão no lugar do ?);
+
+	//Para encaminhar rotas 
+	return redirect('rota/rota');
+
+	//Para enviar parametros de requisições anteriores
+	1 - Enviar o parametro: return redirect('rota/rota')->withInput($var);
+	2 - Resgatar na página desejada através de: old('nomevar');
