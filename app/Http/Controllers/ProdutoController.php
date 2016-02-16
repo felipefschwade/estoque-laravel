@@ -20,11 +20,8 @@
 			return view('produto/formulario');
 		}
 		public function adiciona() {
-			$nome = Request::input('nome');
-			$valor = Request::input('valor');
-			$quantidade = Request::input('quantidade');
-			$descricao = Request::input('descricao');
-			DB::insert('insert into produtos (nome, valor, quantidade, descricao) values (?,?,?,?)', array($nome, $valor, $quantidade, $descricao) );
+			$params = Request::all();
+			Produto::create($params);
 			return redirect()->action('ProdutoController@lista')->withInput(Request::only('nome'));
 		}
 		public function listaJSON() {
