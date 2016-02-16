@@ -16,7 +16,11 @@
 	        		<td><a href="/produtos/mostra/<?=$p->id?>">
 						  <span class="glyphicon glyphicon-search"></span>
 						</a>
-					</td>	
+					</td>
+					<td><a href="/produtos/remove/<?=$p->id?>">
+						  <span class="glyphicon glyphicon-trash"></span>
+						</a>
+					</td>		
 	            </tr>
 		    @endforeach
 	@endif

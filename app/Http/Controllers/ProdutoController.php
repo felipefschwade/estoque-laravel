@@ -27,4 +27,9 @@
 			$produtos = DB::select('select * from produtos');
 			return response()->json($produtos);
 		}
+		public function remove($id) {
+			$produto = Produto::find($id);
+			$produto->delete();
+			return redirect()->action('ProdutoController@lista');
+		}
 	}
