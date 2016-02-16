@@ -20,8 +20,7 @@
 			return view('produto/formulario');
 		}
 		public function adiciona() {
-			$params = Request::all();
-			Produto::create($params);
+			Produto::create(Request::all());
 			return redirect()->action('ProdutoController@lista')->withInput(Request::only('nome'));
 		}
 		public function listaJSON() {
