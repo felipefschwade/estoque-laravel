@@ -26,4 +26,8 @@
 			DB::insert('insert into produtos (nome, valor, quantidade, descricao) values (?,?,?,?)', array($nome, $valor, $quantidade, $descricao) );
 			return redirect()->action('ProdutoController@lista')->withInput(Request::only('nome'));
 		}
+		public function listaJSON(){
+			$produtos = DB::select('select * from produtos');
+			return response()->json($produtos);
+		}
 	}

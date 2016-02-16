@@ -22,6 +22,11 @@
 	//Para obter um parametro via URL
 	use Request;
 	Request::input('nome' , 'default'); //Default usado para quand o parametro não é passado);
+	//Para Id's informados na rota é possivel utilizar:
+	public function FunctionName($id) {
+		# code...
+	}
+
 	//Para metodos post é necessário incluir a linha que impede ataques de csrf:
 	<input type="hidden" name="_token" value="{{csrf_token()}}">
 	//Modificar o metodo da rota
@@ -45,15 +50,48 @@
 	@endforeach
 	<p>class="{{ a >= 0 ? 'danger' : ''}}"</p>
 
-	//Para utilizar o DB
-	use Illuminate\Support\Facades\DB;
-	DB::select('select * from produtos where id = ?', [arraycontendo os valores que irão no lugar do ?]);
-	DB::insert('insert into tabela (colum, colum, colum) values (?,?,?)', array(arraycontendo os valores que irão no lugar do ?);
-
+	
 	//Para encaminhar rotas 
 	return redirect('rota/rota');
 	//Ou
 	redirect()->action('NomeControlador@metodo')->withInput(Request::only('nome'));
+
+	//Para utilizar o DB
+	use Illuminate\Support\Facades\DB;
+	DB::select('select * from produtos where id = ?', [arraycontendo os valores que irão no lugar do ?]);
+	DB::insert('insert into tabela (colum, colum, colum) values (?,?,?)', array(arraycontendo os valores que irão no lugar do ?);
+	//Para utilizar o Model
+	php artisan make:model nome;
+	//Dentro do controler
+	use estoque\nomeModel;
+	//Para Selecionar todos
+	nomeModel::all();
+	//Para selecionar um especifico por ID
+	nomeModel::find($id);
+	//Para Salvar um dado no DB
+	$var = new nomeModel();
+	$var->instancia = ;
+	$var->instancia = ;
+	$var->instancia = ;
+	$var->save();
+	//Facilitando a inserção np DB
+	1- Utilizar o Mass Assigment
+	$params = Request::all();
+	$var = new nomeModel($params);
+	$var->save();
+	2 - Modificar o Model
+	protected fillable = array('nomecoluna', 'nomecoluna', 'nomecoluna');
+	3 - nomeModel::create($params/Request::all());
+	//CAso não deseje utilizar a data de criação e data de alteração
+	1 - Atribuir public $timestamps = false na classe;
+	//Caso o nome da tabela não seja o nome da classe no plural
+	Atribuir protected $table = 'nometabela'; 
+
+	//Para remover Produtos
+	$id = Request::route('nome');
+	$produto = nomeModel::find($id);
+	$produto->delete();
+	redirect('/local')
 
 	//Para enviar parametros de requisições anteriores
 	1 - Enviar o parametro: return redirect('rota/rota')->withInput(Request::except('nome') ou Request::only('nome') ou nada para todos parametros);
