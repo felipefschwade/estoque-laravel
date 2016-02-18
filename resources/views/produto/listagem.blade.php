@@ -9,15 +9,16 @@
 		<table class="table">
 			@foreach($produtos as $p)
 				<tr class="{{ $p->quantidade <= 1 ? 'danger' : ''}}">
-	            	<td><?=$p->nome?></td>
-	            	<td><?=$p->descricao?></td>
-	            	<td><?=$p->valor?></td>
-	            	<td><?=$p->quantidade?></td>
-	        		<td><a href="/produtos/mostra/<?=$p->id?>">
+	            	<td>{{$p->nome}}</td>
+	            	<td>{{$p->descricao}}</td>
+	            	<td>{{$p->valor}}</td>
+	            	<td>{{$p->quantidade}}</td>
+	            	<td>{{ $p->tamanho }}</td>
+	        		<td><a href="/produtos/mostra/{{$p->id}}">
 						  <span class="glyphicon glyphicon-search"></span>
 						</a>
 					</td>
-					<td><a href="/produtos/remove/<?=$p->id?>">
+					<td><a href="/produtos/remove/{{$p->id}}">
 						  <span class="glyphicon glyphicon-trash"></span>
 						</a>
 					</td>		

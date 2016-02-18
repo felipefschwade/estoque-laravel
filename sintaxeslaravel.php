@@ -101,3 +101,9 @@
 	//Para gerar uma key de session automatica
 	php artisan key:generate
 	APP_KEY=chavegerada //no arquivo .env
+	//Para criar uma migração
+	php artisan make:migration nome_migracao
+	//Para rodar
+	php artisan migrate
+	//Para RollBack
+	php artisan migrate:rollback
