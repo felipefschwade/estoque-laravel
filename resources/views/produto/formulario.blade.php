@@ -1,5 +1,7 @@
 @extends('layout/principal')
-
+@foreach($errors->all() as $error)
+	<li class="text-danger">{{$error}}</li>
+@endforeach
 @section('conteudo')
 	<div class="container">
 		<form action="/produtos/adiciona" method="post">
