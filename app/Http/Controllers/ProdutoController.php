@@ -2,8 +2,7 @@
 	use Illuminate\Support\Facades\DB;
 	use Request;
 	use estoque\Produto;
-	use Validator;
-
+	use estoque\Http\Requests\ProdutoRequest;
 	class ProdutoController extends Controller {
 		public function lista() {
 			$produtos = Produto::all();
@@ -20,23 +19,8 @@
 		public function novo() {
 			return view('produto/formulario');
 		}
-		public function adiciona() {
-			$validator = Validator::make(
-					['nome' => Request::input('nome'),
-						'descricao' => Request::input('descricao'),
-						'valor' => Request::input('valor'),
-						'quantidade' => Request::input('quantidade')
-					],
-					['nome' => 'required|min:5',
-					'descricao' => 'required|max:255',
-					'valor' => 'required|numeric',
-					'quantidade' => 'required|numeric']
-				);
-			if ($validator->fails()) {
-				$validator->messages();
-				return redirect('/produtos/novo');
-			}
-			Produto::create(Request::all());
+		public function adiciona(ProdutoRequest $Request) {
+			Produto::create($Request->all());
 			return redirect()->action('ProdutoController@lista')->withInput(Request::only('nome'));
 		}
 		public function listaJSON() {
