@@ -107,3 +107,33 @@
 	php artisan migrate
 	//Para RollBack
 	php artisan migrate:rollback
+
+	//Para realizar a validação de formulários simples
+	use Validator;
+	$var = Validator::make(
+			['nomecampo' => Request::input('nomecampo')],
+			['nomecampo' => 'regras|required|min:numerominimo']
+		);
+	if ($var->fails()){
+		$var->messages();
+		return redirect('/local');
+	}
+	//Para a validação de muitos componentes
+	php artisan make:request OqueéValidadoRequest
+	//App/Http/Requests
+	public function rules(){
+		return [
+			'nomecampo' => 'regras',
+			'nomecampo' => 'regras'
+		];
+	}
+	public function messages(){
+		return [
+			"nome.regra" => 'mensagem',
+			'regra' => 'Mensagem :attribute'
+		]
+	}
+	//Enviar como paramentro da função do controler
+	public function a(nomeClasse $request){
+		Produto::create($request->all());
+	}
