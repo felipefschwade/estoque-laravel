@@ -25,7 +25,10 @@
 | kernel and includes session state, CSRF protection, and more.
 |
 */
-
+Route::controllers([
+    'auth' => 'Auth\AuthController',
+    'password' => 'Auth\PasswordController',
+]);
 Route::group(['middleware' => ['web']], function () {
     Route::get('/produtos' , 'ProdutoController@lista');
 	Route::get('/produtos/mostra/{id}' , 'ProdutoController@mostra');
