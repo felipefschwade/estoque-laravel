@@ -154,5 +154,5 @@
 
 	//Se registrar o Middleware na parte de rotas
 	function __construct() {
-		$this->middleware('nome');
+		$this->middleware('nome' , ['only' => ['adiciona', 'remove']]);
 	}
