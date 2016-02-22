@@ -6,7 +6,7 @@
 	class ProdutoController extends Controller {
 
 	    function __construct() {
-	   		$this->middleware('auth');
+	   		$this->middleware('auth' , ['only' => ['adiciona', 'remove', 'novo']]);
 	    }
 		public function lista() {
 			$produtos = Produto::all();
