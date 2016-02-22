@@ -4,6 +4,10 @@
 	use estoque\Produto;
 	use estoque\Http\Requests\ProdutoRequest;
 	class ProdutoController extends Controller {
+
+	    function __construct() {
+	   		$this->middleware('auth');
+	    }
 		public function lista() {
 			$produtos = Produto::all();
 			return view('produto/listagem')->with('produtos', $produtos);
