@@ -7,6 +7,9 @@
 		/*Funções*/
 		/*Para carregar views com variaveis*/return view('nomeview')->with('nomeVarNaView', $var);
 	}
+	//Para criar um controller no arstisan
+	php artisan make:controller nome --plain
+
 	//Utilizando o controller na rota
 	Route::get('/nomeRota', 'NomeControlador@nomeMetodo');
 
@@ -136,4 +139,20 @@
 	//Enviar como paramentro da função do controler
 	public function a(nomeClasse $request){
 		Produto::create($request->all());
+	}
+	//Para realizar login de usuários
+	use Auth;
+	$credenciais = Request::only('usuario', 'senha');
+	Auth::attempt($credenciais); //Verifica as credencias e retorna true ou false
+
+	Auth::guest() //Retorna se o usuário é um convidado ou um usuário logado
+
+	//Utilizando Middlwares
+	php artisan make:middleware nome
+	//Após configurar, abrir o Kernel e registrar o novo Middleware
+	if (!$request->is('login') && Auth::guest()) {}
+
+	//Se registrar o Middleware na parte de rotas
+	function __construct() {
+		$this->middleware('nome');
 	}
