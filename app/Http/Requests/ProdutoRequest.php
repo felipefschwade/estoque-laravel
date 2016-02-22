@@ -21,4 +21,11 @@ class ProdutoRequest extends Request
                     'quantidade' => 'required|numeric' 
         ];
     }
+    public function messages() {
+        return [
+            'required' => ':attribute é um campo obrigatório',
+            'min' => ':attribute deve conter no mínimo :min caracteres',
+            'numeric' => ':attribute deve ser númerico'
+        ]; 
+    }
 }
