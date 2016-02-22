@@ -147,11 +147,11 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
-        Bestmomo\Scafold\ScafoldServiceProvider::class,
 
         /*
          * Application Service Providers...
          */
+        Bestmomo\Scafold\ScafoldServiceProvider::class,
         estoque\Providers\AppServiceProvider::class,
         estoque\Providers\AuthServiceProvider::class,
         estoque\Providers\EventServiceProvider::class,

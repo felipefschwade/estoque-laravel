@@ -11,9 +11,9 @@
 |
 */
 
-/*Route::get('/', function () {
+Route::get('/', function () {
     return view('welcome');
-});*/
+});
 
 /*
 |--------------------------------------------------------------------------
@@ -37,3 +37,13 @@ Route::group(['middleware' => ['web']], function () {
 	Route::post('/produtos/adiciona' , 'ProdutoController@adiciona');
 	Route::get('/produtos/listaJSON' , 'ProdutoController@listaJSON');
 });	
+Route::group(['middleware' => 'web'], function () {
+    Route::auth();
+    Route::get('/home', 'HomeController@index');
+});
+
+Route::group(['middleware' => 'web'], function () {
+    Route::auth();
+
+    Route::get('/home', 'HomeController@index');
+});
