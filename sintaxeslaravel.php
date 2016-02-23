@@ -97,12 +97,12 @@
 	redirect('/local')
 	//Para criar chaves estrangeiras
 	class Model extends Model{
-		public function nomeChave(){
+		public function nomeTabela(){
 			return $this->belongsTo('nomeprojeto/classe');
 		}
 	}
 	class OutroModel extends Model{
-		public function nomeChave(){
+		public function nomeTabela(){
 			return $this->hasMany('nomeprojeto/classe');
 		}
 	}
