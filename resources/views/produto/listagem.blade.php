@@ -6,6 +6,11 @@
 			Você não possui nenhum produto cadastrado!
 		</div>
 	@else
+	@if(Session::has('status'))
+		<div class="alert alert-danger">
+			{{Session::get('status')}}
+		</div>
+	@endif
 		<table class="table">
 			@foreach($produtos as $p)
 				<tr class="{{ $p->quantidade <= 1 ? 'danger' : ''}}">

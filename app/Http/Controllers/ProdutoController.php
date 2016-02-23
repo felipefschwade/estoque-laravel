@@ -34,6 +34,7 @@
 		}
 		public function remove($id) {
 			$produto = Produto::find($id);
+			Request::session()->flash('status', 'O Produto '.$produto->nome.' foi removido com sucesso!');
 			$produto->delete();
 			return redirect()->action('ProdutoController@lista');
 		}
