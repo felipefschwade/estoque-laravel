@@ -64,7 +64,7 @@
 	DB::select('select * from produtos where id = ?', [arraycontendo os valores que irão no lugar do ?]);
 	DB::insert('insert into tabela (colum, colum, colum) values (?,?,?)', array(arraycontendo os valores que irão no lugar do ?);
 	//Para utilizar o Model
-	php artisan make:model nome;
+	php artisan make:model nome -m(para criar a migração);
 	//Dentro do controler
 	use estoque\nomeModel;
 	//Para Selecionar todos
@@ -77,7 +77,7 @@
 	$var->instancia = ;
 	$var->instancia = ;
 	$var->save();
-	//Facilitando a inserção np DB
+	//Facilitando a inserção no DB
 	1- Utilizar o Mass Assigment
 	$params = Request::all();
 	$var = new nomeModel($params);
@@ -95,11 +95,24 @@
 	$produto = nomeModel::find($id);
 	$produto->delete();
 	redirect('/local')
+	//Para criar chaves estrangeiras
+	class Model extends Model{
+		public function nomeChave(){
+			return $this->belongsTo('nomeprojeto/classe');
+		}
+	}
+	class OutroModel extends Model{
+		public function nomeChave(){
+			return $this->hasMany('nomeprojeto/classe');
+		}
+	}
+
+
+
 
 	//Para enviar parametros de requisições anteriores
 	1 - Enviar o parametro: return redirect('rota/rota')->withInput(Request::except('nome') ou Request::only('nome') ou nada para todos parametros);
 	2 - Resgatar na página desejada através de: old('nomevar');
-
 
 	//Para gerar uma key de session automatica
 	php artisan key:generate
@@ -147,7 +160,7 @@
 
 	Auth::guest() //Retorna se o usuário é um convidado ou um usuário logado
 
-	//Utilizando Middlwares
+	//Utilizando Middlewares
 	php artisan make:middleware nome
 	//Após configurar, abrir o Kernel e registrar o novo Middleware
 	if (!$request->is('login') && Auth::guest()) {}
