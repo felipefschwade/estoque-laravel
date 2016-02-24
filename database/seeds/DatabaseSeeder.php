@@ -9,3 +9,12 @@ class DatabaseSeeder extends Seeder
         $this->call(CategoriaTableSeeder::class);
     }
 }
+
+class CategoriaTableSeedr extends Seeder {
+	public function run() {
+		Categoria::create(['nome' => "Eletrônicos"]);
+		Categoria::create(['nome' => "Eletrodomésticos"]);
+		Categoria::create(['nome' => "Esportes"]);
+		Categoria::create(['nome' => "Brinquedos"]);
+	}
+}
