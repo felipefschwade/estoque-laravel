@@ -10,7 +10,7 @@ class DatabaseSeeder extends Seeder
     }
 }
 
-class CategoriaTableSeedr extends Seeder {
+class CategoriaTableSeeder extends Seeder {
 	public function run() {
 		Categoria::create(['nome' => "Eletrônicos"]);
 		Categoria::create(['nome' => "Eletrodomésticos"]);
