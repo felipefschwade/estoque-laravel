@@ -169,3 +169,13 @@
 	function __construct() {
 		$this->middleware('nome' , ['only' => ['adiciona', 'remove']]);
 	}
+
+	//Para criar Seeds
+	1 - Abrir Databaseseeder.php
+	2 - Criar uma classe
+		class NomeTabelaSeeder extends Seeder {
+			public function run(){
+				ClasseModel::create(['chave' => 'valor', 'chave' => 'valor'])
+			}	
+		}
+	3 - Executar o comando: php artisan db:seed ou php artisan db:seed --class=nomeclasse
